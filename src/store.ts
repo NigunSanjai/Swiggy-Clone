@@ -15,3 +15,9 @@ export const store = configureStore({
     cart: cartReducer,
   },
 });
+// This is the Redux store, which is the global state management system for the app.
+//  The user state is managed by the userReducer, which is imported from the userdata slice.
+//   The topbanner state is managed by the topbannerReducer, which is imported from the topbanner slice.
+//    The location state is managed by the locationReducer, which is imported from the location slice.
+//     The resturants state is managed by the resturantsReducer, which is imported from the resturants slice.
+//      The cart state is managed by the cartReducer, which is imported from the cart slice.

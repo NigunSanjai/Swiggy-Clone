@@ -45,6 +45,10 @@ export const userSlice = createSlice({
   },
 });
 
+//location is used to set the location of the user
+//login is used to set the name and email of the user
+//setres is used to set the resturant id of the user which is selected by the user
+
 export const { login, location, setres } = userSlice.actions;
 
 export default userSlice.reducer;

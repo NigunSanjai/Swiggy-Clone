@@ -18,17 +18,19 @@ import {
 import { Resturants } from './Resturants/Resturants';
 // import Carousels from './Carousel/Carousel';
 
-const Dashboard = () => {
-  const user = useSelector((state) => state.user.value);
+// Thsi is the main Dashboard Component which comes into action once the user is logged in
 
-  const [showheader, setshowheader] = useState(true);
+const Dashboard = () => {
+  const user = useSelector((state) => state.user.value); // This is the Redux State to get the user details
+  const [showheader, setshowheader] = useState(true); // This is the state to show the header
   const scrollpos = 800;
   const dispatch = useDispatch();
-  const [loading, isloading] = useState(true);
+  const [loading, isloading] = useState(true); // This is the state to make the screen blank until the data is fetched from the API
   useEffect(() => {
     dispatch(resetmenu({}));
     dispatch(resetres({}));
     dispatch(resettop({}));
+    // This is the API call to fetch the data from the API
     axios
       .get(`https://www.swiggy.com/dapi/restaurants/list/v5`, {
         params: {
@@ -42,17 +44,18 @@ const Dashboard = () => {
         // Example usage:
 
         const resarray =
-          response.data.data.cards[0].card.card.gridElements.infoWithStyle.info;
+          response.data.data.cards[0].card.card.gridElements.infoWithStyle.info; // This is the array which holds the banner data
         const whatsonmind =
-          response.data.data.cards[1].card.card.gridElements.infoWithStyle.info;
+          response.data.data.cards[1].card.card.gridElements.infoWithStyle.info; //This is the array which holds the What's on your mind data
         const topres =
           response.data.data.cards[2].card.card.gridElements.infoWithStyle
-            .restaurants;
+            .restaurants; // This is the array which holds the Top Resturants data
         const resgrid =
           response.data.data.cards[5].card.card.gridElements.infoWithStyle
-            .restaurants;
-        console.log(topres);
-
+            .restaurants; // This is the array which holds the Resturants data
+        // console.log(topres);
+        
+        //The below function is to check the time and return the status of the resturant
         function checktime(given: string): string {
           const currentTime: Date = new Date();
           const givenTime: Date = new Date(given);
@@ -64,8 +67,9 @@ const Dashboard = () => {
         }
 
         resarray.map((ele) => {
-          const randomHexCode = getRandomHexCode();
+          const randomHexCode = getRandomHexCode(); 
           const oppositeHexCode = getOppositeHexCode(randomHexCode);
+          //The below dispatch is to update the banner data
           dispatch(
             update({
               id: ele.id,
@@ -76,6 +80,7 @@ const Dashboard = () => {
             }),
           );
         });
+        //The below function is to take every element from the array and dispatch it to the Topbanner Redux store
         whatsonmind.map((ele) => {
           dispatch(
             updatemind({
@@ -84,6 +89,8 @@ const Dashboard = () => {
             }),
           );
         });
+
+        //The below function is to take every element from the array and dispatch it to the Topbanner Redux store
         topres.map((ele) => {
           dispatch(
             toprest({
@@ -99,6 +106,7 @@ const Dashboard = () => {
             }),
           );
         });
+        //The below function is to take every element from the array and dispatch it to the Resturants Redux store
         resgrid.map((ele) => {
           const oporclose = checktime(ele.info.sla.deliveryTime);
           dispatch(
@@ -119,6 +127,7 @@ const Dashboard = () => {
         isloading(false);
       });
   }, []);
+  // This is the function to handle the scroll and show the header
   const handleScroll = () => {
     if (window.scrollY > scrollpos) {
       setshowheader(false);
@@ -132,6 +141,7 @@ const Dashboard = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
+  //Since by defaut an empty object is passed to the Redux store, the below code is to remove the empty object
   const banner = useSelector((state) => state.topbanner.value1);
   const filteredbanner = banner.slice(1);
   console.log(filteredbanner);
@@ -154,11 +164,9 @@ const Dashboard = () => {
     }
     return oppositeCode;
   }
+  //The above two functions are to generate random colors for the banner one to generate the color for the background and the other to generate the color for the text
 
-  // function view() {
-  //   console.log(banner.value);
-  // }
-  // ?lat=18.5362084&lng=73.8939748&page_type=DESKTOP_WEB_LISTING`
+
   return (
     <>
       {loading ? (
@@ -166,8 +174,10 @@ const Dashboard = () => {
       ) : (
         <div>
           {showheader && <DashHeader />}
-          <Carousels />
+          <Carousels /> 
+          {/* Displays the Carousel dealing with the Banner WhatsonMind and Top Resturants */}
           <Resturants />
+          {/* Displays the Resturants */}
         </div>
       )}
     </>

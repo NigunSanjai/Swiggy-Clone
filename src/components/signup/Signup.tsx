@@ -1,21 +1,24 @@
 import { useState } from 'react';
 import './signup.css';
-import Login from '../login/login';
+// import Login from '../login/login';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { auth, db } from '../../config/firebase';
+import {db } from '../../config/firebase';
 import { addDoc, collection } from 'firebase/firestore';
+
+
+
+//Again similar to login.tsx, I have to pass the props from App.tsx to this component
 
 function SignUp({
   sig,
   setsig,
-  log,
+
   setlog,
 }: {
   sig: boolean;
-  setsig: any;
-  log: boolean;
-  setlog: any;
+  setsig: React.Dispatch<React.SetStateAction<boolean>>;
+  setlog: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [phone, setphone] = useState('');
   const [name, setname] = useState('');
@@ -33,6 +36,7 @@ function SignUp({
       console.log('Error');
     }
   };
+  //The above method is for adding the user data to firestore database
 
   const signin = () =>
     toast.success('Sign-In successful, Login to Continue', {
@@ -45,6 +49,10 @@ function SignUp({
       progress: undefined,
       theme: 'light',
     });
+
+  //The above method is for toastr
+
+
   if (!sig) return <></>;
   return (
     <>
@@ -101,8 +109,7 @@ function SignUp({
                       type="tel"
                       name="mobile"
                       id="mobile"
-                      tabIndex="1"
-                      maxLength="10"
+
                       autoComplete="off"
                       onChange={(e) => {
                         setphone(e.target.value);
@@ -123,7 +130,7 @@ function SignUp({
                       type="text"
                       name="name"
                       id="name"
-                      tabIndex="2"
+
                       autoComplete="off"
                       onChange={(e) => {
                         setname(e.target.value);
@@ -144,7 +151,7 @@ function SignUp({
                       type="email"
                       name="email"
                       id="email"
-                      tabIndex="3"
+
                       autoComplete="off"
                       onChange={(e) => {
                         setemail(e.target.value);

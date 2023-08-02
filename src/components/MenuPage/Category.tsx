@@ -3,7 +3,14 @@ import React, { useState } from 'react';
 import './Category.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addcart, deletecart, updatecart } from '../../features/cart';
+// Implemented kind of CRUD operations on the cart Redux Store
+
+// For the restaurant which is selected, the complete restaurat data is passed as props to this component
+// This Component is used to display the Menu of the Restaurant with adding and removing items from the cart
+// All the items are maintained in the Restaurant Redux Store
+
 const Category = (props) => {
+
   const carts = useSelector((state) => state.cart.value);
   const [expand, setexpand] = useState(true);
   const dispatch = useDispatch();

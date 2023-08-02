@@ -6,23 +6,27 @@ import './Carousel.css';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { setres } from '../../../features/userdata';
+
+//React-Multi-Carousel is used for the Carousel in the Dashboard Page is a external library
+//Carousels component is used for code reusability
 const Carousels = () => {
   const banners = useSelector((state) => state.topbanner.value1);
   const minds = useSelector((state) => state.topbanner.value2);
   const res = useSelector((state) => state.topbanner.value3);
   const location = useSelector((state) => state.location.value);
-  const user = useSelector((state) => state.user.value);
+  // All the above are the Redux States to get the data from the Redux Store
   console.log(banners);
   const filteredbanner = banners.slice(1);
   const filteredminds = minds.slice(1);
   const filteredres = res.slice(1);
+  // The above are the filtered arrays to remove the first element from the array since by default a empty object is passed to the Redux Store
 
   const nav = useNavigate();
   const dispatch = useDispatch();
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
+
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -39,9 +43,9 @@ const Carousels = () => {
       items: 1,
     },
   };
+
   const responsive1 = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -60,7 +64,7 @@ const Carousels = () => {
   };
   const responsive2 = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
+
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -82,6 +86,7 @@ const Carousels = () => {
     <>
       <div className="carousel">
         <h2 style={{ marginBottom: '10px' }}>Best Offers for You </h2>
+        {/* For the Top Banner Carousel */}
         <Carousel responsive={responsive}>
           {filteredbanner.map((banner) => {
             return (
@@ -115,6 +120,7 @@ const Carousels = () => {
       </div>
       <div className="carousel1">
         <h2 style={{ marginBottom: '10px' }}>Whats on Mind </h2>
+        {/* For the Whats on Mind Carousel */}
         <Carousel responsive={responsive1}>
           {filteredminds.map((mind) => {
             return (
@@ -149,6 +155,7 @@ const Carousels = () => {
           {`Top Resturants in ${location.name}`}{' '}
         </h2>
         <Carousel responsive={responsive2}>
+          {/* For the Top Resturants Carousel */}
           {filteredres.map((mind) => {
             return (
               <div

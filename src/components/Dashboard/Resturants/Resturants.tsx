@@ -4,7 +4,8 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import './Resturants.css';
 import { setres } from '../../../features/userdata';
-
+// This component is used to display the Resturants in the Dashboard Page as a grid
+// The Resturants are displayed using the Redux Store
 export const Resturants = () => {
   const resturants = useSelector((state) => state.resturants.value);
   const filteredresturants = resturants.slice(1);

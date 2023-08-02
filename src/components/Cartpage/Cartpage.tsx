@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Cartpage.css';
 import { addcart, deletecart, updatecart } from '../../features/cart';
 import DashHeader from '../Dashboard/Header/Header';
+// Since cart is accessible from all the pages, it is maintained as a seperate component
 const Cartpage = () => {
   const carts = useSelector((state) => state.cart.value);
   const filteredcarts = carts.slice(1);
@@ -108,5 +109,5 @@ const Cartpage = () => {
     </>
   );
 };
-
+// User can add or remove items from the cart according to which the total price is calculated
 export default Cartpage;

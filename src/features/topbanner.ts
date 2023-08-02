@@ -51,19 +51,10 @@ export const topbannerSlice = createSlice({
   },
 });
 
-// export const whatsonmind = createSlice({
-//   name: 'whatsonmind',
-//   initialState: {
-//     value: { mind: [''] },
-//   },
-//   reducers: {
-//     updatemind: (state, action) => {
-//       state.value = {
-//         mind: [...state.value.mind, action.payload.mind],
-//       };
-//     },
-//   },
-// });
+//update is used to update the topbanner
+//updatemind is used to update the mind banner
+//toprest is used to update the top resturants
+//resettop is used to reset the top resturants
 
 export const { update, updatemind, toprest, resettop } = topbannerSlice.actions;
 

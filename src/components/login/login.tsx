@@ -8,20 +8,30 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../../features/userdata';
 import { db } from '../../config/firebase';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, DocumentData } from 'firebase/firestore';
+// All the below mentioned methods are for otp login with firebase authentication
+// Toastify is used for showing toast messages for UI elements
+// useNavigate is used for routing to different pages
+// useDispatch is used for dispatching actions to redux store
+// db is used for accessing firestore database
+// collection, query, where, getDocs are used for querying the firestore database
+// RecaptchaVerifier, signInWithPhoneNumber are used for otp login with firebase authentication
+// login is used for dispatching the user data to redux store
 
+
+// Since I passed the props from App.tsx to this component, I have to define the props here
 function Login({
   log,
   setlog,
-  sig,
+
   setsig,
   render,
 }: {
   log: boolean;
-  setlog: any;
+  setlog: React.Dispatch<React.SetStateAction<boolean>>;
   sig: boolean;
-  setsig: any;
-  render: any;
+  setsig: React.Dispatch<React.SetStateAction<boolean>>;
+  render: boolean;
 }) {
   const tabindex: number = 1;
   const maxlength: number = 30;
@@ -70,6 +80,7 @@ function Login({
     }
     return true;
   };
+  // All the above mentioned methods are for otp login with firebase authentication and are called in the below mentioned methods
 
   // All useState methods
   const [phone, setphone] = useState('');
@@ -110,7 +121,8 @@ function Login({
       console.log(err);
     }
   };
-  function handlereduxuserupdate(data) {
+  //The above mentioned method is for redux user updation and is called in the below mentioned method
+  function handlereduxuserupdate(data: DocumentData) {
     const userObj = {
       name: data.name,
       email: data.email,

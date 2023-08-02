@@ -4,15 +4,29 @@ import './home.css';
 import Typewriter from 'typewriter-effect';
 import Login from '../login/login';
 import SignUp from '../signup/Signup';
-import { login } from '../../features/userdata';
+// import { login } from '../../features/userdata';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { location } from '../../features/userdata';
 import { setlocation } from '../../features/location';
+
+// All the imports are mentioned above
+// Typewriter is used for the animation of the text in the home page
+// Login and Signup are the components which are used for the login and signup page
+// axios for routing
+// useDispatch for dispatching the action to the redux store
+// location is the action which is used for storing the location of the user in the userdata slice
+// setlocation is the action which is used for setting the location of the user in the location slice
+
+
 function Home() {
-  const [log, setlog] = useState(false);
-  const [sig, setsig] = useState(false);
-  const [render, setrender] = useState(true);
+  const [log, setlog]  = useState<boolean>(false); // log is the state which is used for the login page
+  const [sig, setsig] = useState<boolean>(false); // sig is the state which is used for the signup page
+  const [render, setrender] = useState(true); // render is the state which is used for rendering the login and signup page
+
+  // The below return is for the Home Page which is the main page of the application since I was learning about having many components i the single page so I have used the components in the home page itself
+  // Four components associated with the home page are Header, Login, SignUp and Middle
+
   return (
     <>
       {(log || sig) && (
@@ -38,7 +52,7 @@ function Home() {
     </>
   );
 }
-
+// Since I was learning about props and states so I have used the props and states in the components
 function Header({
   log,
   setlog,
@@ -50,15 +64,6 @@ function Header({
   setsig: boolean;
   render: any;
 }) {
-  // const tabindex: number = 1;
-  // const maxlength: number = 30;
-
-  // const [loc, setloc] = useState('');
-
-  // const handleSearchResult = (result) => {
-  //   console.log('Selected Location:', result);
-  //   // Do something with the selected location data
-  // };
 
   return (
     <>
@@ -241,7 +246,7 @@ function Middle() {
     </>
   );
 }
-
+// With the help of Mapbox API I have created a search box which will help the user to search for the location and a feature called AutoComplete will help the user to get the location name as he types in the search box.
 function SearchBox(props) {
   const [query, setquery] = useState('');
   const [results, setResults] = useState({});

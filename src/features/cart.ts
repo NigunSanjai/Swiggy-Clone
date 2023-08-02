@@ -53,7 +53,9 @@ export const cartSlice = createSlice({
     },
   },
 });
-
+//addcart is used to add the item to the cart
+//updatecart is used to update the quantity of the item in the cart
+//deletecart is used to delete the item from the cart
 export const { addcart, deletecart, updatecart } = cartSlice.actions;
 
 export default cartSlice.reducer;

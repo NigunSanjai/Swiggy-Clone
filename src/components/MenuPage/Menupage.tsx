@@ -5,6 +5,11 @@ import { menuupdate, resetmenu } from '../../features/resturants';
 import DashHeader from '../Dashboard/Header/Header';
 import './Menupage.css';
 import Category from './Category';
+
+// All the above are the imports
+// UseSelector and useDispatch is for updating the Redux State
+
+
 const Menupage = () => {
   const user = useSelector((state) => state.user.value);
   const resturant = useSelector((state) => state.resturants.menu);
@@ -16,6 +21,7 @@ const Menupage = () => {
   const [showmheader, setshowmheader] = useState(true);
   const scrollpos = 300;
   const [mloading, ismloading] = useState('');
+  // Once page loads useEffect comes into action to fetch the data from the API and assign to the respective variables in the Redux States
   useEffect(() => {
     dispatch(resetmenu({}));
     axios
@@ -69,10 +75,10 @@ const Menupage = () => {
         ismloading('true');
       });
   }, []);
-  if (mloading == 'true') {
-    console.log(dmenudata);
-  }
-
+  // if (mloading == 'true') {
+  //   console.log(dmenudata);
+  // }
+// The below code is for the header to hide when the user scrolls down and show when the user scrolls up
   const handleScroll = () => {
     if (window.scrollY > scrollpos) {
       setshowmheader(false);
@@ -86,6 +92,9 @@ const Menupage = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
+// In the return of this component we are checking if the data is loaded or not and then displaying the data
+// This time worked with file and folder structuring and had DashHeader- which is the header for the page
+// ResHeader includes the First three sections of the page
 
   return (
     <>
@@ -93,11 +102,14 @@ const Menupage = () => {
         <div></div>
       ) : (
         <div>
+          {/* The DashHeader is taken from the Dashboard Header itself for unify UI view */}
           {showmheader && <DashHeader />}
+          {/* Resheader is declared below as a component itselt  */}
           {mloading === 'true' && <Resheader />}
           {mloading == 'true' &&
             dmenudata.slice(2, dmenudata.length).map((data) => {
               return <Category title={data.title} items={data.items} />;
+              // Category is used to display different categories as a part of reusuability
             })}
         </div>
       )}
@@ -105,6 +117,8 @@ const Menupage = () => {
   );
 };
 
+
+// Resheader is declared below as a component itself that displays the Resturant Name, Cuisines, Rating, Cost, Delivery Time, Distance
 export function Resheader() {
   const resturant = useSelector((state) => state.resturants.menu);
   console.log(resturant);
