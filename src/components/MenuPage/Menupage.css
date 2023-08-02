@@ -1,0 +1,193 @@
+.size {
+  width: 80%;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: ProximaNova;
+  font-weight: 500;
+}
+
+.RestaurantHeader_container__2XRhv1 {
+  margin: 0 16px;
+}
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: none;
+  outline: none;
+}
+
+.RestaurantHeader_marginBottom__1rbfK {
+  margin-bottom: 18px;
+}
+
+.RestaurantHeader_wrapper__2GTdS {
+  padding-top: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.RestaurantHeader_dottedSeparator__2O2hU {
+  border: none;
+  border-bottom: 1px dashed #d3d3d3;
+}
+
+.RestaurantNameAddress_wrapper__24l_g {
+  display: inline-block;
+  margin-right: 16px;
+  width: calc(100% - 120px);
+}
+
+button {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: none;
+  color: inherit;
+  font: inherit;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+}
+
+.RestaurantRatings_wrapper__2294i {
+  border: 1px solid #e9e9eb;
+  box-shadow: 0 1px 5px #f9f9f9;
+  border-radius: 6px;
+  text-align: center;
+  padding: 8px;
+  max-width: 100px;
+  float: right;
+}
+
+.RestaurantTimeCost_wrapper__3YXF9 {
+  color: #3e4152;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.RestaurantNameAddress_areaWrapper__3HIxj {
+  display: flex;
+  align-items: center;
+  height: 16px;
+}
+
+.RestaurantRatings_avgRating__1TOWY {
+  color: #3d9b6d;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9e9eb;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.RestaurantRatings_totalRatings__3d6Zc {
+  font-size: 11px;
+  color: #8b8d97;
+  font-family: ProximaNovaCondensedRegular, arial, Helvetica Neue, sans-serif;
+  font-weight: 600;
+}
+
+.RestaurantTimeCost_item__2HCUz {
+  display: inline-block;
+}
+
+.RestaurantTimeCost_item__2HCUz:first-child {
+  margin-right: 24px;
+}
+
+.RestaurantNameAddress_name__2IaTv {
+  font-size: 1.43rem;
+  font-weight: 600;
+  color: #282c3f;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.RestaurantNameAddress_cuisines__mBHr2 {
+  font-size: 0.93rem;
+  color: #7e808c;
+  height: calc(0.93rem + 2px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.RestaurantNameAddress_area__2P9ib {
+  font-size: 0.93rem;
+  color: #7e808c;
+}
+
+.RestaurantNameAddress_lastMile__26BNf {
+  font-size: 0.93rem;
+  color: #7e808c;
+}
+
+.RestaurantNameAddress_lastMile__26BNf:before {
+  content: ',';
+  margin-right: 4px;
+}
+
+.RestaurantOutletSelector_wrapper__1aoe4 {
+  display: block;
+}
+
+[class^='icon-'] {
+  font-family: icomoon;
+
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+  content: '\E938';
+}
+
+.RestaurantTimeCost_icon__8UdT4 {
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.RestaurantOutletSelector_address__5hzM4 {
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #fc8019;
+}
+
+.RestaurantOutletSelector_outletIcon__3mmu9 {
+  font-size: 14px;
+}

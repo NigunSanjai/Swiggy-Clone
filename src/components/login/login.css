@@ -1,0 +1,432 @@
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 700;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/700.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/700.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/700.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 600;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/600.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/600.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/600.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 500;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/500.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/500.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/500.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 400;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/400.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/400.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/400.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 300;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/300.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/300.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/300.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: icomoon;
+  src: url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.eot?eojet8');
+  src: url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.eot?eojet8#iefix')
+      format('embedded-opentype'),
+    url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.ttf?eojet8')
+      format('truetype'),
+    url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.woff?eojet8')
+      format('woff'),
+    url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.svg?eojet8#icomoon')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: none;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-weight: 300;
+  color: #282c3f;
+}
+
+.overlay-enabled {
+  position: relative;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+html {
+  line-height: 1.2;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  font-family: arial, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-weight: 300;
+  color: #282c3f;
+}
+
+.fonts-loaded {
+  font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+  letter-spacing: 0;
+}
+
+._3vi_e {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow-y: scroll;
+  background: #fff;
+  /* transition: transform 0.3s ease-out; */
+  z-index: 10001;
+  /* transform: translateZ(0); */
+  width: 40%;
+  animation: mymove 1s forwards;
+}
+._3vi_e1 {
+  animation: bmymove 1.5s backwards;
+}
+
+.back {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+@keyframes mymove {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
+@keyframes bmymove {
+  from {
+    transform: translateX(30px);
+  }
+  to {
+    transform: translateX(800px);
+  }
+}
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: none;
+  outline: none;
+}
+
+._12S7_ {
+  position: relative;
+}
+
+._3pYe- {
+  position: relative;
+  padding-top: 30px;
+  margin-bottom: 69px;
+  z-index: 1;
+}
+
+[class*=' icon-'] {
+  font-family: icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._22fFW {
+  color: #535665;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.icon-close-thin:before {
+  content: '\E913';
+}
+
+._1Tg1D {
+  margin-top: 25px;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: ProximaNova;
+}
+
+.HXZeD {
+  width: 190px;
+  margin-top: 5px;
+  font-family: ProximaNova;
+}
+
+._2r91t {
+  margin-top: 10px;
+  position: relative;
+}
+
+._2r91t:after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  width: 30px;
+  border: 1px solid #000;
+}
+
+img {
+  border-style: none;
+}
+
+.jdo4W {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  z-index: -1;
+}
+
+._2tuBw {
+  opacity: 1 !important;
+}
+
+._12_oN {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+._2-hTu {
+  clear: both;
+  margin-top: 20px;
+}
+
+._25qBi {
+  position: relative;
+  clear: both;
+}
+
+._1FvHn {
+  font-size: 12px;
+  color: #686b78;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+}
+
+._3p4qh {
+  font-weight: 500;
+  cursor: pointer;
+  color: #fc8019;
+  font-family: ProximaNova;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+._3Um38 {
+  border: 1px solid #d4d5d9;
+  padding: 0;
+  display: block;
+  position: relative;
+  transform: translateZ(0);
+}
+
+._3lG1r {
+  border-bottom: 0 !important;
+}
+
+._3lG1r:last-child {
+  border-bottom: 1px solid #d4d5d9 !important;
+}
+
+.a-ayg {
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  line-height: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 50px;
+  padding: 0 2rem;
+  color: #fff;
+  letter-spacing: 0;
+  background-color: #fc8019;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  text-transform: uppercase;
+}
+
+.a-ayg:hover {
+  position: relative;
+  box-shadow: 0 2px 8px #d4d5d9;
+}
+
+.a-ayg:hover:after {
+  content: '';
+  bottom: -1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+}
+
+.IBw2l {
+  color: #282c3f;
+}
+
+input {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
+  color: inherit;
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+._381fS {
+  background-color: transparent;
+  line-height: normal;
+  border: none;
+  outline: none;
+  height: 70px;
+  width: 100%;
+  font-size: 17px;
+  margin: 0;
+  padding: 0 20px;
+  padding-top: 22px;
+  box-shadow: none;
+  box-sizing: border-box;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+._2EeI1 {
+  position: absolute;
+  right: 20px;
+  bottom: 26px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5d8ed5;
+  transform: translateZ(0);
+  cursor: pointer;
+  will-change: transform;
+  transition: 0.2s ease;
+}
+
+._26LFr {
+  -ms-transform: translateY(70%);
+  transform: translateY(70%);
+}
+
+._1Cvlf {
+  position: absolute;
+  left: 0;
+  bottom: 24px;
+  padding-left: 20px;
+  line-height: 20px;
+  font-size: 17px;
+  cursor: text;
+  transition: 0.2s ease;
+  width: 100%;
+  color: #93959f;
+  will-change: transform, color, font-size;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+._2tL9P {
+  font-size: 12px;
+  font-weight: 500;
+  color: #7e808c;
+  -ms-transform: translateY(-70%);
+  transform: translateY(-70%);
+}
+
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-hNGBQ.style-hNGBQ {
+  left: auto;
+  right: 0px;
+  transform: translate(0%, 0px);
+}
+#style-3Poxs.style-3Poxs {
+  padding-left: 40px;
+  padding-right: 0px;
+  width: 402px;
+}
+#style-iBTBw.style-iBTBw {
+  height: 130px;
+}
+#style-Zeozo.style-Zeozo {
+  display: none;
+}

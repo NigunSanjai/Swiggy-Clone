@@ -1,0 +1,174 @@
+.carousel {
+  width: 80%;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: ProximaNova;
+  font-weight: 500;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carousel1 {
+  width: 80%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: ProximaNova;
+  font-weight: 500;
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 700;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/700.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/700.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/700.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 600;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/600.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/600.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/600.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 500;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/500.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/500.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/500.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 400;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/400.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/400.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/400.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 300;
+  src: url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/300.woff2')
+      format('woff2'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/300.woff')
+      format('woff'),
+    url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/ux3/300.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: icomoon;
+  src: url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.eot?eojet8');
+  src: url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.eot?eojet8#iefix')
+      format('embedded-opentype'),
+    url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.ttf?eojet8')
+      format('truetype'),
+    url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.woff?eojet8')
+      format('woff'),
+    url('https://media-assets.swiggy.com/swiggy/raw/upload/v1/FontAssets/dweb/icomoon.svg?eojet8#icomoon')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.slide-container {
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+.wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.wrapper:focus {
+  outline: 0;
+}
+.clash-card {
+  background: white;
+  width: 275px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  cursor: pointer;
+}
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.clash-card__level--barbarian {
+  color: #ec9b3b;
+  cursor: pointer;
+}
+.clash-card__unit-name {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.clash-card__unit-description {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.clash-card__unit-stats--barbarian {
+  background: #ec9b3b;
+}
+.clash-card__unit-stats--barbarian .one-third {
+  border-right: 1px solid #bd7c2f;
+}
+.clash-card__unit-stats {
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.clash-card__unit-stats .one-third {
+  width: 33%;
+  float: left;
+  padding: 20px 15px;
+}
+.clash-card__unit-stats sup {
+  position: absolute;
+  bottom: 4px;
+  font-size: 45%;
+  margin-left: 2px;
+}
+.clash-card__unit-stats .stat {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.clash-card__unit-stats .stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+}
+.clash-card__unit-stats .no-border {
+  border-right: none;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
