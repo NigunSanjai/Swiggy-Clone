@@ -87,6 +87,11 @@ export const resturantsSlice = createSlice({
   },
 });
 
+//resturants is used to update the resturants
+//menuupdate is used to update the menu
+//resetmenu is used to reset the menu
+//resetres is used to reset the resturant data
+
 export const { resturants, menuupdate, resetmenu, resetres } =
   resturantsSlice.actions;
 

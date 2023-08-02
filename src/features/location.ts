@@ -22,6 +22,8 @@ export const locationSlice = createSlice({
     },
   },
 });
+//setlocation is used to set the location of the user
+
 
 export const { setlocation } = locationSlice.actions;
 
